@@ -363,7 +363,7 @@ public class FCMService extends FirebaseMessagingService implements PushConstant
     String packageName = context.getPackageName();
     Resources resources = context.getResources();
 
-    int notId = parseInt(NOT_ID, extras);
+    int notId = (int) new Date().getTime();
     Intent notificationIntent = new Intent(this, PushHandlerActivity.class);
     notificationIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
     notificationIntent.putExtra(PUSH_BUNDLE, extras);
